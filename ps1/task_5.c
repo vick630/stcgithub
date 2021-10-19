@@ -67,7 +67,7 @@ void back(){
 	turn_left();
 	turn_left();
 }
-void stred(){
+void middle(){
 	if(front_is_clear()){
 		step();
 		step();
