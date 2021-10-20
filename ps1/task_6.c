@@ -42,7 +42,7 @@ int zbieraj(){
 
                             else {
                                 east();
-                                }
+                                
                                 return 1;
                             }
                         }
@@ -60,11 +60,12 @@ int zbieraj(){
                     north();
                     return 1;
                 }
-         
+        }
          else {
             return 1;
-         }}
-} 
+         }
+}
+
 
 
 void east(){
