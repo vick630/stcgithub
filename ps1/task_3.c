@@ -11,7 +11,7 @@ void left2();
 
 int main(){
 	turn_on("task_3.kw");
-	set_step_delay(SPEEd);
+	set_step_delay(SPEED);
 	pick();
 	while(front_is_clear()){
 		if(  front_is_clear() && right_is_blocked()){
