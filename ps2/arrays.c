@@ -5,7 +5,6 @@ float unit_price(const float pack_price, const int rolls_count, const int pieces
 int collatz(const int number);
 int opposite_number(const int n, const int number);
 
-
 int main(){
 printf("%.2f\n",(lift_a_car(2,80,1400)));
 printf("%.2f\n",(unit_price(4.79,16,150)));
