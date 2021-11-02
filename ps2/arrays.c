@@ -3,11 +3,14 @@
 float lift_a_car(const int stick_length, const int human_weight, const int car_weight);
 float unit_price(const float pack_price, const int rolls_count, const int pieces_count);
 int collatz(const int number);
+int opposite_number(const int n, const int number);
+
 
 int main(){
 printf("%.2f\n",(lift_a_car(2,80,1400)));
 printf("%.2f\n",(unit_price(4.79,16,150)));
 printf("%d\n", collatz(35));
+printf("%d\n", opposite_number(12,9));
 }
 
 float lift_a_car(const int stick_lenght, const int human_weight, const int car_weight){
@@ -37,4 +40,8 @@ count=count+1;
 }
 return count+1;
 return 0;
+}
+
+int opposite_number(const int n, const int number){
+return (number+(n/2))%n;
 }
