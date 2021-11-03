@@ -5,12 +5,14 @@ float unit_price(const float pack_price, const int rolls_count, const int pieces
 int collatz(const int number);
 int opposite_number(const int n, const int number);
 
+unsigned long sum_squared(const int line);
 
 int main(){
-printf("%.2f\n",(lift_a_car(2,80,1400)));
 printf("%.2f\n",(unit_price(4.79,16,150)));
 printf("%d\n", collatz(35));
-printf("%d\n", opposite_number(12,9));
+
+
+printf("%lu\n", sum_squared(1));
 }
 
 float lift_a_car(const int stick_lenght, const int human_weight, const int car_weight){
@@ -21,7 +23,7 @@ hodnota=hodnota/100;
 return hodnota;}
 
 float unit_price(const float pack_price, const int rolls_count, const int pieces_count){
-float hodnotaa=( float) pack_price/((float) rolls_count * (float) pieces_count);
+float hodnotaa=( float) pack_price/(float) rolls_count / (float) pieces_count;
 hodnotaa=hodnotaa*100;
 return hodnotaa;}
 
@@ -44,4 +46,9 @@ return 0;
 
 int opposite_number(const int n, const int number){
 return (number+(n/2))%n;
+}
+
+
+unsigned long sum_squared(const int line){
+return 0;
 }
