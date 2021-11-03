@@ -5,6 +5,7 @@ float unit_price(const float pack_price, const int rolls_count, const int pieces
 int collatz(const int number);
 int opposite_number(const int n, const int number);
 
+<<<<<<< HEAD
 unsigned long sum_squared(const int line);
 
 int main(){
@@ -13,6 +14,9 @@ printf("%d\n", collatz(35));
 
 
 printf("%lu\n", sum_squared(1));
+=======
+int main(){
+>>>>>>> c20f69152b4f6f5622a4ed99a5652b844f904f78
 }
 
 float lift_a_car(const int stick_lenght, const int human_weight, const int car_weight){
