@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <math.h>
 
-
 float lift_a_car(const int stick_length, const int human_weight, const int car_weight);
 float unit_price(const float pack_price, const int rolls_count, const int pieces_count);
 int collatz(const int number);
@@ -10,10 +9,10 @@ int array_min(const int input_array[], const int array_size);
 int array_max(const int input_arra[], const int array_siye);
 void counter(const int input_array[], const int array_size, int result_array[2]);
 unsigned long special_counter(const int input_array[],const int array_size);
-
+unsigned long sum_squared(const int line);
 
 int main(){
-
+printf("%lu\n",sum_squared(4));
 }
 
 float lift_a_car(const int stick_lenght, const int human_weight, const int car_weight){
@@ -96,3 +95,20 @@ summ=summ+(int) pow(input_array[i],2);
 }
 summm=(int)sum+ (int)summ;
 return summm;}
+
+
+unsigned long sum_squared(const int line){
+int n=(int)line;
+int sum=0;
+int k=0;
+int l=0;
+int fact=1;
+for(int i=1; i<=n; i=i+1){
+fact=fact*i;
+for(int o=1; o<n; o=o+1){
+sum=sum*o;
+k=(int)(fact/sum)*(int)(fact/sum);
+l=l+k;
+}}
+return fact;
+}
