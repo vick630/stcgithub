@@ -1,22 +1,19 @@
 #include <stdio.h>
 #include <math.h>
+
+
 float lift_a_car(const int stick_length, const int human_weight, const int car_weight);
 float unit_price(const float pack_price, const int rolls_count, const int pieces_count);
 int collatz(const int number);
 int opposite_number(const int n, const int number);
-
-<<<<<<< HEAD
-unsigned long sum_squared(const int line);
+int array_min(const int input_array[], const int array_size);
+int array_max(const int input_arra[], const int array_siye);
 
 int main(){
-printf("%.2f\n",(unit_price(4.79,16,150)));
+int input_array[]={2,3,4,5,6};
 printf("%d\n", collatz(35));
+printf("%d\n", array_max(input_array,5));
 
-
-printf("%lu\n", sum_squared(1));
-=======
-int main(){
->>>>>>> c20f69152b4f6f5622a4ed99a5652b844f904f78
 }
 
 float lift_a_car(const int stick_lenght, const int human_weight, const int car_weight){
@@ -53,6 +50,22 @@ return (number+(n/2))%n;
 }
 
 
-unsigned long sum_squared(const int line){
-return 0;
+int array_min(const int input_array[], const int array_size){
+int length= (int) array_size;
+int min=input_array[0];
+for(int i=0;i<length;i=i+1){
+if(input_array[i]<min)
+min=input_array[i];
+return min;}
+return min;
 }
+
+int array_max(const int input_array[], const int array_size){
+int i;
+int length=(int)array_size;
+int max=input_array[0];
+for (i=1; i<length; i=i+1){
+if (input_array[i]>max)
+max=input_array[i];
+}
+return max;}
