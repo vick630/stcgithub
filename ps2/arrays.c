@@ -10,9 +10,12 @@ int array_min(const int input_array[], const int array_size);
 int array_max(const int input_arra[], const int array_siye);
 void counter(const int input_array[], const int array_size, int result_array[2]);
 unsigned long sum_squared(const int line);
+unsigned long special_counter(const int input_array[],const int array_size);
+
 
 int main(){
-printf("%lu\n", sum_squared(4));
+int input_array[]= {11,12,13,14,15};
+printf("%lu\n", special_counter(input_array,5));
 }
 
 float lift_a_car(const int stick_lenght, const int human_weight, const int car_weight){
@@ -25,7 +28,7 @@ return hodnota;}
 float unit_price(const float pack_price, const int rolls_count, const int pieces_count){
 float hodnotaa=( float) pack_price/(float) rolls_count / (float) pieces_count;
 hodnotaa=hodnotaa*100;
-hotnotaa=hodnotaa/100;
+hodnotaa=hodnotaa/100;
 return hodnotaa;}
 
 int collatz(const int number){
@@ -63,15 +66,16 @@ result_array[1]=summ;}
 }
 
 unsigned long sum_squared(const int line){
-
-
-
+int row=(int)line;
+int summm=0;
+summm=pow(2,(int) row);
+return summm;
 }
 
 int array_min(const int input_array[], const int array_size){
 int length= (int) array_size;
 int min=input_array[0];
-for(int i=0;i<length;i=i+1){
+for(int i=0;i<=length;i=i+1){
 if(input_array[i]<min)
 min=input_array[i];
 return min;}
@@ -87,3 +91,17 @@ if (input_array[i]>max)
 max=input_array[i];
 }
 return max;}
+
+unsigned long special_counter(const int input_array[], const int array_size){
+int length= (int) array_size;
+int sum=0;
+int summ=0;
+int summm=0;
+for(int i=0; i<length; i=i+2){
+sum=sum+input_array[i];
+}
+for(int i=1; i<length; i=i+2){
+summ=summ+(int) pow(input_array[i],2);
+}
+summm=(int)sum+ (int)summ;
+return summm;}
