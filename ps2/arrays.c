@@ -8,12 +8,15 @@ int collatz(const int number);
 int opposite_number(const int n, const int number);
 int array_min(const int input_array[], const int array_size);
 int array_max(const int input_arra[], const int array_siye);
+void counter(const int input_array[], const int array_size, int result_array[2]);
+
 
 int main(){
-int input_array[]={2,3,4,5,6};
+int input_array[]={1,2,3,4,5,};
+int result_array[2];
+counter(input_array, 5, result_array);
+printf("%d %d\n", result_array[0], result_array[1]);
 printf("%d\n", collatz(35));
-printf("%d\n", array_max(input_array,5));
-
 }
 
 float lift_a_car(const int stick_lenght, const int human_weight, const int car_weight){
@@ -47,6 +50,19 @@ return 0;
 
 int opposite_number(const int n, const int number){
 return (number+(n/2))%n;
+}
+
+void counter(const int input_array[], const int array_size, int result_array[2]){
+int length= (int) array_size;
+int sum=0;
+int summ=0;
+for(int i=0; i<length;i=i+2){
+sum=sum+input_array[i];
+result_array[0]=sum;
+}
+for(int i=1; i<length; i=i+2){
+summ=summ+input_array[i];
+result_array[1]=summ;}
 }
 
 
