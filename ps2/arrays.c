@@ -28,7 +28,6 @@ return hodnota;}
 float unit_price(const float pack_price, const int rolls_count, const int pieces_count){
 float hodnotaa=( float) pack_price/(float) rolls_count / (float) pieces_count;
 hodnotaa=hodnotaa*100;
-hodnotaa=hodnotaa/100;
 return hodnotaa;}
 
 int collatz(const int number){
@@ -67,9 +66,11 @@ result_array[1]=summ;}
 
 unsigned long sum_squared(const int line){
 int row=(int)line;
-int summm=0;
-summm=pow(2,(int) row);
-return summm;
+int sum=0;
+for(int i=0;i<=row;i=i+1){
+sum=0;
+}
+return sum;
 }
 
 int array_min(const int input_array[], const int array_size){
@@ -77,8 +78,7 @@ int length= (int) array_size;
 int min=input_array[0];
 for(int i=0;i<=length;i=i+1){
 if(input_array[i]<min)
-min=input_array[i];
-return min;}
+min=input_array[i];}
 return min;
 }
 
