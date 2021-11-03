@@ -9,13 +9,11 @@ int opposite_number(const int n, const int number);
 int array_min(const int input_array[], const int array_size);
 int array_max(const int input_arra[], const int array_siye);
 void counter(const int input_array[], const int array_size, int result_array[2]);
-unsigned long sum_squared(const int line);
 unsigned long special_counter(const int input_array[],const int array_size);
 
 
 int main(){
-int input_array[]= {11,12,13,14,15};
-printf("%lu\n", special_counter(input_array,5));
+
 }
 
 float lift_a_car(const int stick_lenght, const int human_weight, const int car_weight){
@@ -28,6 +26,7 @@ return hodnota;}
 float unit_price(const float pack_price, const int rolls_count, const int pieces_count){
 float hodnotaa=( float) pack_price/(float) rolls_count / (float) pieces_count;
 hodnotaa=hodnotaa*100;
+hodnotaa=round(hodnotaa);
 return hodnotaa;}
 
 int collatz(const int number){
@@ -64,14 +63,6 @@ summ=summ+input_array[i];
 result_array[1]=summ;}
 }
 
-unsigned long sum_squared(const int line){
-int row=(int)line;
-int sum=0;
-for(int i=0;i<=row;i=i+1){
-sum=0;
-}
-return sum;
-}
 
 int array_min(const int input_array[], const int array_size){
 int length= (int) array_size;
