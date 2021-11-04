@@ -12,7 +12,6 @@ unsigned long special_counter(const int input_array[],const int array_size);
 unsigned long sum_squared(const int line);
 
 int main(){
-printf("%lu\n",sum_squared(4));
 }
 
 float lift_a_car(const int stick_lenght, const int human_weight, const int car_weight){
