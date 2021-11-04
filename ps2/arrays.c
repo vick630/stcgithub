@@ -14,6 +14,7 @@ int special_numbers(const int input_array[], const int array_size, int result_ar
 
 
 int main(){
+<<<<<<< HEAD
 int input_array[]={16,17,4,3,5,2};
 int result_array[6];
 int count= special_numbers(input_array, 6, result_array);
@@ -21,6 +22,8 @@ for(int i=0; i<count;i++){
 printf("%d",result_arrayp[i]);
 }
 printf("\n");
+=======
+>>>>>>> 5dc94fd4b86cc9d5fae07449be818d52cc5e0f7d
 }
 
 float lift_a_car(const int stick_lenght, const int human_weight, const int car_weight){
