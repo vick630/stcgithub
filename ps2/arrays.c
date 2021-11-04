@@ -9,19 +9,8 @@ int array_min(const int input_array[], const int array_size);
 int array_max(const int input_arra[], const int array_siye);
 void counter(const int input_array[], const int array_size, int result_array[2]);
 unsigned long special_counter(const int input_array[],const int array_size);
-int special_numbers(const int input_array[], const int array_size, int result_array[]);
-
-
 
 int main(){
-
-int input_array[]={16,17,4,3,5,2};
-int result_array[6];
-int count= special_numbers(input_array, 6, result_array);
-for(int i=0; i<count;i++){
-printf("%d",result_arrayp[i]);
-}
-printf("\n");
 }
 
 float lift_a_car(const int stick_lenght, const int human_weight, const int car_weight){
@@ -103,13 +92,3 @@ summ=summ+(int) pow(input_array[i],2);
 summm=(int)sum+ (int)summ;
 return summm;}
 
-
-int special_numbers(const int input_array[],const int array_size, int result_array[]){
-int n= (int) array_size;
-int sum=0;
-int k=1;
-for(int i=0; i<k; i=i+1){
-if input_array[i]<input_array[i]
-
-}
-}
