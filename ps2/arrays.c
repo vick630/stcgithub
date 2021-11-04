@@ -9,10 +9,18 @@ int array_min(const int input_array[], const int array_size);
 int array_max(const int input_arra[], const int array_siye);
 void counter(const int input_array[], const int array_size, int result_array[2]);
 unsigned long special_counter(const int input_array[],const int array_size);
-unsigned long sum_squared(const int line);
+int special_numbers(const int input_array[], const int array_size, int result_array[]);
+
+
 
 int main(){
-printf("%lu\n",sum_squared(4));
+int input_array[]={16,17,4,3,5,2};
+int result_array[6];
+int count= special_numbers(input_array, 6, result_array);
+for(int i=0; i<count;i++){
+printf("%d",result_arrayp[i]);
+}
+printf("\n");
 }
 
 float lift_a_car(const int stick_lenght, const int human_weight, const int car_weight){
@@ -23,9 +31,7 @@ hodnota=hodnota/100;
 return hodnota;}
 
 float unit_price(const float pack_price, const int rolls_count, const int pieces_count){
-float hodnotaa=( float) pack_price/(float) rolls_count / (float) pieces_count;
-hodnotaa=hodnotaa*100;
-hodnotaa=round(hodnotaa);
+float hodnotaa=(( float) pack_price*100)/((float) rolls_count * (float) pieces_count);
 return hodnotaa;}
 
 int collatz(const int number){
@@ -97,18 +103,12 @@ summm=(int)sum+ (int)summ;
 return summm;}
 
 
-unsigned long sum_squared(const int line){
-int n=(int)line;
+int special_numbers(const int input_array[],const int array_size, int result_array[]){
+int n= (int) array_size;
 int sum=0;
-int k=0;
-int l=0;
-int fact=1;
-for(int i=1; i<=n; i=i+1){
-fact=fact*i;
-for(int o=1; o<n; o=o+1){
-sum=sum*o;
-k=(int)(fact/sum)*(int)(fact/sum);
-l=l+k;
-}}
-return fact;
+int k=1;
+for(int i=0; i<k; i=i+1){
+if input_array[i]<input_array[i]
+
+}
 }
