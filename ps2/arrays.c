@@ -22,6 +22,9 @@ return hodnota;}
 
 float unit_price(const float pack_price, const int rolls_count, const int pieces_count){
 float hodnotaa=(( float) pack_price*100)/((float) rolls_count * (float) pieces_count);
+hodnotaa=hodnotaa*100;
+hodnotaa=round(hodnotaa);
+hodnotaa=hodnotaa/100;
 return hodnotaa;}
 
 int collatz(const int number){
