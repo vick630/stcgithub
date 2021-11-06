@@ -98,16 +98,19 @@ summm=(int)sum+ (int)summ;
 return summm;}
 
 unsigned long sum_squared(const int line){
-int n= (int) line;
-int array[line];
-array[0]=1;
-for(int i=1; i<line; i=i+1){
-array[i]=array[i-1]*n/i;
-n=n-1;
+int n=line+1;
+long int m;
+long int s=0;
+long int c=1;
+int i=1;
+
+do{
+m=(int)c*(int)c;
+s=(int)s+(int)m;
+c=(int)c*(n-i)/i;
+i=i+1;
 }
-unsigned long vysledok= 0;
-for(int i=0;i<line;i=i+1){
-vysledok+=array[i]*array[i];}
-return vysledok+1;
+while(i<=n);
+return s;
 }
 
