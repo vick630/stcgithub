@@ -8,12 +8,12 @@ int opposite_number(const int n, const int number);
 int array_min(const int input_array[], const int array_size);
 int array_max(const int input_arra[], const int array_siye);
 void counter(const int input_array[], const int array_size, int result_array[2]);
+unsigned long sum_squared(const int line);
 unsigned long special_counter(const int input_array[],const int array_size);
 
-
-
 int main(){
-printf("%.2f\n", unit_price(4.79,16,150));
+printf("%lu\n", sum_squared(4));
+
 }
 
 float lift_a_car(const int stick_lenght, const int human_weight, const int car_weight){
@@ -97,4 +97,17 @@ summ=summ+(int) pow(input_array[i],2);
 summm=(int)sum+ (int)summ;
 return summm;}
 
+unsigned long sum_squared(const int line){
+int n= (int) line;
+int array[line];
+array[0]=1;
+for(int i=1; i<line; i=i+1){
+array[i]=array[i-1]*n/i;
+n=n-1;
+}
+unsigned long vysledok= 0;
+for(int i=0;i<line;i=i+1){
+vysledok+=array[i]*array[i];}
+return vysledok+1;
+}
 
