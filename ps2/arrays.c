@@ -105,7 +105,7 @@ int c=1;
 int i=1;
 
 do{
-    k=int(c)*(int)c;
+    k=(int)c*(int)c;
     s=(int)s+(int)k;
     c=(int)c*(n-i)/i;
     i++;
