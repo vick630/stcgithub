@@ -168,42 +168,129 @@ printf("%s\n", jo);
 
 
 void hangman(const char secret[]){
-	char available_letters[]="abcdefghijklmnopqrstuvwxyz";
-	int a;//dlzka tajneho slova
-	int l=8; //pocet pokusov
-	char slovo[16]="\0";
-	//char abeceda[]="abcdefghijklmnopqrstuvwxyz";
-	char letters_guessed[100];
-
-	int i;
-
-    for(i=0;i<100;i++){             //vycistenie pola
-        letters_guessed[i]='\0';
+	if(strlen(letters_guessed)==0){
+        for(int i=0;i<strlen(secret);i++){
+            guessed_word[i]='_';
+        }
     }
+    for(int i=0;i<strlen(secret);i++){
+        for(int j=0;j<strlen(letters_guessed);j++){
+            if(secret[i]==letters_guessed[j]){
+                guessed_word[i]=secret[i];
+                break;
+            }
+            guessed_word[i]='_';   
+        }    
+    }
+int end=strlen(secret);
+guessed_word[end]='\0';
+}
 
 
-	printf("%s\n",secret );//sledujes ake slovo bolo zadane
+void get_available_letters(const char letters_guessed[], char available_letters[]){
+    /*if(strlen(letters_guessed)==0){
+        
+    }*/
+    int k=0;
+    char *lets, alpha[]="abcdefghijklmnopqrstuvwxyz";
+    lets=(char*)malloc(20);
+    for(int i=0;i<strlen(alpha);i++){
+        lets=strchr(letters_guessed, alpha[i]);
+        if(lets!=0){
+            continue;
+        }
+        else{
+            available_letters[k++]=alpha[i];
+        }
+    }
+    available_letters[k]='\0';
+}     
 
-    a=strlen(secret);
-
-    printf("%d\n",a );//kontrolujes dlzku slova
-    printf("Welcome to the game, Hangman!\n");
-    printf("I am thinking of a word that is %d letters long.\n", a);
+void hangman(const char secret[]){ 
+    char h[26], alpha[30], given[50]="", writen[30]="";
+    int go_on=1, tries=8;
+    int l=0;
+    get_guessed_word(secret,given,writen);
     
+    printf("Welcome to the game, Hangman!\n");
+    printf("I am thinking of a word that is %ld letters long.", strlen(secret));
+    printf("\n-------------");
+    while(go_on){
+        printf("\nYou have %d guesses left.",tries);
+        printf("\nAvailable letters: ");
+        get_available_letters(given,alpha);
+        printf("%s",alpha);
+        printf("\nPlease guess a letter: ");
+        scanf("%s",h);
+        while (getchar()!='\n')
+            ;
+        for(int i=0;i<strlen(h);i++){
+            h[i]=tolower(h[i]);
+        }
+        if(strlen(h)==1){
+            char lett=h[0];
+            if(lett<'a' || lett>'z'){
+                printf("Oops! '%c' is not a valid letter:", lett);
+                for(int i=0;i<strlen(writen);i++){
+                    printf(" %c",writen[i]);
+                }
+                printf("\n-------------");
+                continue;
+            }
+            if(!strchr(alpha,lett)){
+                printf("Oops! You've already guessed that letter:");
+                get_guessed_word(secret,given,writen);
+                for(int i=0;i<strlen(writen);i++){
+                    printf(" %c",writen[i]);
+                }
+                printf("\n-------------");
+                continue;
+            }
+            given[l++]=lett;
+            if(strchr(secret,lett)){
+                printf("Good guess:");
+                get_guessed_word(secret,given,writen);
+                for(int i=0;i<strlen(writen);i++){
+                    printf(" %c",writen[i]);
+                }
+                if(is_word_guessed(secret,given)==1){
+                    printf("\n-------------");
+                    printf("\nCongratulations, you won!\n");
+                    break;
+                }
+            }
+            else{
+                printf("Oops! That letter is not in my word:");
+                get_guessed_word(secret,given,writen);
+                for(int i=0;i<strlen(writen);i++){
+                    printf(" %c",writen[i]);
+                }
+                tries--;
+                if(tries==0){
+                    printf("\n-------------");
+                    printf("\nSorry, you ran out of guesses. The word was %s.\n",secret);
+                    break;
+                }
+            }
+            printf("\n-------------");
+        }
+        else if(strlen(h)==strlen(secret)){
+            if(*h==*secret){
+                printf("Congratulations, you won!\n");
+                break;   
+            }
+            else{
+                printf("Sorry, bad guess. The word was %s.\n",secret);
+                break;
+            }
+        }
+        else{
+            printf("Oops! '%s' is not a valid entry:",h);
+            for(int i=0;i<strlen(writen);i++){
+                    printf(" %c",writen[i]);
+                }
+                printf("\n-------------");
+                continue;
+        }
     }
-
-    while(l!=0){
-
-		printf("You have %d guesses left.\n",l);
-		printf("Available letters: ");
-		get_available_letters( letters_guessed,  available_letters);
-		//tu budes volat funkciu ( letters_guessed,  available_letters);
-        printf("\n");
-        printf("Please guess a letter:"  );
-        scanf("%s", slovo);
-        l=l+1;
-
-
-
-
 }
