@@ -176,7 +176,6 @@ void hangman(const char secret[]){
 	char letters_guessed[100];
 
 	int i;
-	int j;
 
     for(i=0;i<100;i++){             //vycistenie pola
         letters_guessed[i]='\0';
@@ -190,6 +189,9 @@ void hangman(const char secret[]){
     printf("%d\n",a );//kontrolujes dlzku slova
     printf("Welcome to the game, Hangman!\n");
     printf("I am thinking of a word that is %d letters long.\n", a);
+    
+    }
+
     while(l!=0){
 
 		printf("You have %d guesses left.\n",l);
@@ -199,30 +201,7 @@ void hangman(const char secret[]){
         printf("\n");
         printf("Please guess a letter:"  );
         scanf("%s", slovo);
-        //printf("%s\n",slovo );
-        j=0;                     
-        do{                                      //zmeni velke pismena na male
-            if(isupper(slovo[j])){
-                slovo[j]=tolower(slovo[j]);
-            }
-            j++;
-        }
-        while(slovo[j]!='\0');
-
-        
-
-
-
-
-
-
-
-
-
-
-    	l=l-1;//toto bude na konci pocita pocet pokusov
-
-    }
+        l=l+1;
 
 
 
