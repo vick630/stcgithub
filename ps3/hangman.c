@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/stat.h>
+#include <time.h>
+#include <ctype.h>
+#include <string.h>
 #include "hangman.h"
-#include<string.h> 
 
 
 int main(){
@@ -14,49 +16,10 @@ int main(){
 //printf("%d\n",is_word_guessed(abeceda,a) );
 //get_available_letters(hggjg,a);
 //get_guessed_word("tojejedno","tjo","");
-hangman("ahoj");
 
 //printf("\nahoj\n");
 return 0;
 }
-
-
-
-
-
-
-
-
-int get_word(char secret[]){
-    // check if file exists first and is readable
-    FILE *fp = fopen(WORDLIST_FILENAME, "rb");
-    if( fp == NULL ){
-        fprintf(stderr, "No such file or directory: %s\n", WORDLIST_FILENAME);
-        return 1;
-    }
-
-    // get the filesize first
-    struct stat st;
-    stat(WORDLIST_FILENAME, &st);
-    long int size = st.st_size;
-
-    do{
-        // generate random number between 0 and filesize
-        long int random = (rand() % size) + 1;
-        // seek to the random position of file
-        fseek(fp, random, SEEK_SET);
-        // get next word in row ;)
-        int result = fscanf(fp, "%*s %20s", secret);
-        if( result != EOF )
-            break;
-    }while(1);
-
-    fclose(fp);
-
-    return 0;
-}
-
-
 
 int is_word_guessed(const char secret[], const char letters_guessed[])
 {
@@ -137,8 +100,7 @@ printf("%s",available_letters );
 void get_guessed_word(const char secret[], const char letters_guessed[], char guessed_word[]){
 int len=strlen(letters_guessed);
 int l=strlen(secret);
-//printf("%d\n", len);
-//printf("%d\n", l);
+
 char jo[l+1];
 for (int i = 0; i < l; ++i)
 {
@@ -158,55 +120,12 @@ for (int i = 0; i < l; ++i)
 		}
 	}
 }
-
 printf("%s\n", jo);
 }
 
 
 
-
-
-
 void hangman(const char secret[]){
-	if(strlen(letters_guessed)==0){
-        for(int i=0;i<strlen(secret);i++){
-            guessed_word[i]='_';
-        }
-    }
-    for(int i=0;i<strlen(secret);i++){
-        for(int j=0;j<strlen(letters_guessed);j++){
-            if(secret[i]==letters_guessed[j]){
-                guessed_word[i]=secret[i];
-                break;
-            }
-            guessed_word[i]='_';   
-        }    
-    }
-int end=strlen(secret);
-guessed_word[end]='\0';
-}
-
-
-void get_available_letters(const char letters_guessed[], char available_letters[]){
-    /*if(strlen(letters_guessed)==0){
-        
-    }*/
-    int k=0;
-    char *lets, alpha[]="abcdefghijklmnopqrstuvwxyz";
-    lets=(char*)malloc(20);
-    for(int i=0;i<strlen(alpha);i++){
-        lets=strchr(letters_guessed, alpha[i]);
-        if(lets!=0){
-            continue;
-        }
-        else{
-            available_letters[k++]=alpha[i];
-        }
-    }
-    available_letters[k]='\0';
-}     
-
-void hangman(const char secret[]){ 
     char h[26], alpha[30], given[50]="", writen[30]="";
     int go_on=1, tries=8;
     int l=0;
@@ -294,3 +213,4 @@ void hangman(const char secret[]){
         }
     }
 }
+
