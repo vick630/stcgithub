@@ -8,16 +8,6 @@
 
 
 int main(){
-
-//char hggjg[]="abcd";
-//char a[]="a";
-
-
-//printf("%d\n",is_word_guessed(abeceda,a) );
-//get_available_letters(hggjg,a);
-//get_guessed_word("tojejedno","tjo","");
-
-//printf("\nahoj\n");
 return 0;
 }
 
