@@ -6,5 +6,10 @@
 
 
 int main(){
-return 0;
+    srand(time(NULL));
+    char secret[30];
+    get_word(secret);
+    hangman(secret);
+    
+    return 0;
 }
