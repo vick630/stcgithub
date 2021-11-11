@@ -15,16 +15,16 @@ int value;
 
 if (secret==NULL ||letters_guessed==NULL)
 {
-	return 0;
+    return 0;
 }
 
-	if (value==0)
-	{
-		return 1; 
-	}
+    if (value==0)
+    {
+        return 1; 
+    }
 else{
 
-	return 0;
+    return 0;
 }
 }
 
@@ -82,29 +82,25 @@ available_letters[pismeno]= '\0';
 
 
 void get_guessed_word(const char secret[], const char letters_guessed[], char guessed_word[]){
-int len=strlen(letters_guessed);
-int l=strlen(secret);
+    if(strlen(letters_guessed)==0){
+        for(int i=0;i<strlen(secret);i++){
+            guessed_word[i]='_';
+        }
+    }
+    for(int i=0;i<strlen(secret);i++){
+        for(int j=0;j<strlen(letters_guessed);j++){
+            if(secret[i]==letters_guessed[j]){
+                guessed_word[i]=secret[i];
+                break;
+            }
+            guessed_word[i]='_';   
+        }    
+    }
+int end=strlen(secret);
+guessed_word[end]='\0';
+}
 
-char guessed_word[l+1];
-for (int i = 0; i < l; ++i)
-{
-	guessed_word[i]='_';
-}
-guessed_word[l]='\0';
-//printf("%s\n",jo );
 
-for (int i = 0; i < l; ++i)
-{
-	for (int o = 0; o< len; ++o)
-	{
-		if (secret[i]==letters_guessed[o])
-		{
-		//	printf("%c\n", secret[i] );
-			guessed_word[i]=secret[i];
-		}
-	}
-}
-}
 void hangman(const char secret[]){ 
     char h[26], alpha[30], given[50]="", writen[30]="";
     int go_on=1, tries=8;
@@ -195,4 +191,5 @@ void hangman(const char secret[]){
         }
     }
 }
+
 
