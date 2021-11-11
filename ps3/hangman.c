@@ -7,10 +7,6 @@
 #include "hangman.h"
 
 
-int main(){
-return 0;
-}
-
 int is_word_guessed(const char secret[], const char letters_guessed[])
 {
 int value;
