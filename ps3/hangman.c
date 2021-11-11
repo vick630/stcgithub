@@ -104,8 +104,6 @@ for (int i = 0; i < l; ++i)
 		}
 	}
 }
-int end=strlen(secret);
-guessed_word[end]='\0';
 }
 void hangman(const char secret[]){ 
     char h[26], alpha[30], given[50]="", writen[30]="";
