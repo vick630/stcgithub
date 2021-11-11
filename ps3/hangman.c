@@ -107,8 +107,7 @@ available_letters[p]= '\0';
 
 void hangman(const char secret[]){ 
     char h[26], alpha[30], given[50]="", writen[30]="";
-    int n=1
-int t=8;
+    int n=1, t=8;
     int l=0;
     get_guessed_word(secret,given,writen);
     printf("Welcome to the game, Hangman!\n");
@@ -190,4 +189,23 @@ int t=8;
                 }
                 printf("\n-------------");
                 continue;
-}}}
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
