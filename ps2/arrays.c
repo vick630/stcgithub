@@ -98,6 +98,7 @@ summm=(int)sum+ (int)summ;
 return summm;}
 
 unsigned long sum_squared(const int line){
+<<<<<<< HEAD
 int n=line+1;
 long int m;
 long int s=0;
@@ -109,6 +110,19 @@ m=(int)c*(int)c;
 s=(int)s+(int)m;
 c=(int)c*(n-i)/i;
 i=i+1;
+=======
+int n= (int) line + 1;
+int k=0;
+int s=0;
+int c=1;
+int i=1;
+
+do{
+    k=(int)c*(int)c;
+    s=(int)s+(int)k;
+    c=(int)c*(n-i)/i;
+    i++;
+>>>>>>> a3812540b556c43dd52935136c858b387799b723
 }
 while(i<=n);
 return s;
