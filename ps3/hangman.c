@@ -82,8 +82,6 @@ while(i!=len)
 
 }
 available_letters[pismeno]= '\0';
-
-printf("%s",available_letters );
 }
 
 
@@ -110,7 +108,8 @@ for (int i = 0; i < l; ++i)
 		}
 	}
 }
-printf("%s\n", jo);
+int end=strlen(secret);
+guessed_word[end]='\0';
 }
 
 
