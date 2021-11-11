@@ -85,12 +85,12 @@ void get_guessed_word(const char secret[], const char letters_guessed[], char gu
 int len=strlen(letters_guessed);
 int l=strlen(secret);
 
-char jo[l+1];
+char guessed_word[l+1];
 for (int i = 0; i < l; ++i)
 {
-	jo[i]='_';
+	guessed_word[i]='_';
 }
-jo[l]='\0';
+guessed_word[l]='\0';
 //printf("%s\n",jo );
 
 for (int i = 0; i < l; ++i)
@@ -100,7 +100,7 @@ for (int i = 0; i < l; ++i)
 		if (secret[i]==letters_guessed[o])
 		{
 		//	printf("%c\n", secret[i] );
-			jo[i]=secret[i];
+			guessed_word[i]=secret[i];
 		}
 	}
 }
