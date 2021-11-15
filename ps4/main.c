@@ -4,6 +4,13 @@
 #include<time.h>
 
 
+
 int main(){
-return 0;
+    srand(time(NULL));
+    int rows=4;
+    int columns=6;
+    char field[rows][columns];
+    generator(rows,columns,field);
+    return 0;
 }
+
