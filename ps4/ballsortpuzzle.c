@@ -2,12 +2,11 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include<time.h>
-
-void generator(const int rows, const int columns, char field[rows][columns]);
-
+void game_field(const int rows, const int columns, char field[rows][columns]);
 
 
-void generator(const int rows, const int columns, char field[rows][columns]){
+
+void game_field(const int rows, const int columns, char field[rows][columns]){
 int a, b;
     a=rand() % columns;
 
