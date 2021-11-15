@@ -5,14 +5,7 @@
 
 void generator(const int rows, const int columns, char field[rows][columns]);
 
-int main(){
-    srand(time(NULL));
-    int rows=4;
-    int columns=6;
-    char field[rows][columns];
-    generator(rows,columns,field);
-    return 0;
-}
+
 
 void generator(const int rows, const int columns, char field[rows][columns]){
 int a, b;
