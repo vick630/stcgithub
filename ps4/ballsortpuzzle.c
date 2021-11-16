@@ -1,18 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-<<<<<<< HEAD
 #include <time.h>
 #include "ballsortpuzzle.h"
-
-
-=======
 #include<time.h>
+
 void game_field(const int rows, const int columns, char field[rows][columns]);
 
-
-
->>>>>>> a6f39271bee9cdfa62660cd2d2180eecb577aaf4
 void game_field(const int rows, const int columns, char field[rows][columns]){
 int a, b;
     a=rand() % columns;
