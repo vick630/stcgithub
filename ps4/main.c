@@ -13,12 +13,4 @@ srand(time(NULL));
     game_field(rows,columns,field);
 return 0;
 }
-\
-#include<time.h>
-
-
-
-int main(){
-    return 0;
-}
 
