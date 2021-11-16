@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+<<<<<<< HEAD
 #include <time.h>
 #include "ballsortpuzzle.h"
 
@@ -13,3 +14,13 @@ srand(time(NULL));
     game_field(rows,columns,field);
 return 0;
 }
+=======
+#include<time.h>
+
+
+
+int main(){
+    return 0;
+}
+
+>>>>>>> a6f39271bee9cdfa62660cd2d2180eecb577aaf4
