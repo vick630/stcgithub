@@ -1,4 +1,3 @@
-
 /**
  * Function draw game field
  * @param rows count of rows
@@ -29,7 +28,7 @@ bool check(const int rows, const int columns, char field[rows][columns]);
  * @param x is column from where character should be moved
  * @param y is column where character should be moved
  */
-void down_possible(const int rows, const int columns, char field[rows][columns], int x, int y);
+void down_possible(const int rows, const int columns, char field[rows][columns]);
 
 
 /**
