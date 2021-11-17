@@ -4,17 +4,7 @@
  * @param columns count of columns
  * @param field hold 2d array of characters in game
  */
-void game_field(const int rows, const int columns, char field[rows][columns]);
-
-
-/**
- * Check fields rows if there are same characters
- * @param rows count of rows
- * @param columns count of columns
- * @param field hold 2d array of characters in game
- * @return true, if columns are complete; false otherwise
- */
-bool check(const int rows, const int columns, char field[rows][columns]);
+void generator(const int rows, const int columns, char fidesz[rows][columns]);
 
 
 
@@ -28,17 +18,8 @@ bool check(const int rows, const int columns, char field[rows][columns]);
  * @param x is column from where character should be moved
  * @param y is column where character should be moved
  */
-void down_possible(const int rows, const int columns, char field[rows][columns]);
+void down_possible(const int rows, const int columns, char fidesz[rows][columns]);
 
-
-/**
- * Function returns 2D array of randomly generated characters
- * There must be two blank columns and other should be full of characters without '\0' or blank spaces
- * @param rows count of rows
- * @param columns count of columns
- * @param field hold 2d array of characters in game
- */
-void generator(const int rows, const int columns, char field[rows][columns]);
 
 
 /**
