@@ -22,7 +22,7 @@ int a, b;
     tarhaz[2]='@';
     tarhaz[3]='^';
     
-    int j=0;
+
     
     for (int i=0; i<rows; i++){
         printf ("%c", ' ');
