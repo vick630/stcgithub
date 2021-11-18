@@ -7,6 +7,8 @@
 
 void generator(const int rows, const int columns, char field[rows][columns]);
 void down_possible(const int rows, const int columns, char field[rows][columns], int x, int y);
+void ball_sort_puzzle();
+
 
 
 int main(){
@@ -227,3 +229,8 @@ void down_possible(const int rows, const int columns, char field[rows][columns],
     //field[1][x]=a;
 
 }
+
+void ball_sort_puzzle(){
+    
+}
+
