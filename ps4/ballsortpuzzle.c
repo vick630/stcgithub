@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <time.h>
+#include "ballsortpuzzle.h"
+
 
 void generator(const int rows, const int columns, char fidesz[rows][columns]);
 void down_possible(const int rows, const int columns, char fidesz[rows][columns]);
