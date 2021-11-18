@@ -18,7 +18,7 @@ void generator(const int rows, const int columns, char fidesz[rows][columns]);
  * @param x is column from where character should be moved
  * @param y is column where character should be moved
  */
-void down_possible(const int rows, const int columns, char fidesz[rows][columns]);
+void down_possible(const int rows, const int columns, char field[rows][columns], int x, int y);
 
 
 
