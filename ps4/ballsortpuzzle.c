@@ -155,4 +155,10 @@ void down_possible(const int rows, const int columns, char fidesz[rows][columns]
 
 }
 
+void ball_sort_puzzle();
+void ball_sort_puzzle(){
+
+    
+}
+
 
