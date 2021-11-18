@@ -25,11 +25,11 @@ int main(){
             
             for(int j=0; j<columns ; j++){
                 
-                    if(fidesz[0][j]!=fidesz[i][j]){             //megegyezik-e az 1. (0.) elemmel a tobbi az oszlopban, azert a legelsovel hasonlitjuk ossze, hogy csak akkor legyen true, ha az egesz sor tele van (amig nincs tele addig az elso sorban szokoz van, tehat nem egyezik meg, ha meg teljesen ures akkor meg mar ujra jo)
+                    if(fidesz[0][j]!=field[i][j]){             //megegyezik-e az 1. (0.) elemmel a tobbi az oszlopban, azert a legelsovel hasonlitjuk ossze, hogy csak akkor legyen true, ha az egesz sor tele van (amig nincs tele addig az elso sorban szokoz van, tehat nem egyezik meg, ha meg teljesen ures akkor meg mar ujra jo)
                         ellenor=false;                          //helyes sorrend ellenorzese
                     }
                 
-                printf ("%c", fidesz[i][j]);
+                printf ("%c", field[i][j]);
                 printf ("%c", ' ');
                 printf ("%c", '|');
                 printf ("%c", ' ');
