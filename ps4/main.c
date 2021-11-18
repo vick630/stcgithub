@@ -13,20 +13,34 @@ int main(){
     bool ellenor;
     generator(rows,columns,field);
 
+    int main(){
+    srand(time(NULL));
+    int rows=4;
+    int columns=6;
+    char field[rows][columns];
+    bool ellenor;
+    int x=2;
+    int y=1;
+    generator(rows,columns,field);
+
     do{
-        down_possible(rows,columns,field);
+        down_possible(rows,columns,field,x,y);
   
         ellenor=true;
                         //innentol csak kiiratas a while vegeig
         for (int i=0; i<rows; i++){
             printf ("%c", ' ');
             printf ("%i", i+1);
-            printf ("%c", ' ');        printf ("%c", '|');printf ("%c", ' ');
+            printf ("%c", ' ');        
+            printf ("%c", '|');
+            printf ("%c", ' ');
             
             for(int j=0; j<columns ; j++){
                 
-                    if(fidesz[0][j]!=field[i][j]){             //megegyezik-e az 1. (0.) elemmel a tobbi az oszlopban, azert a legelsovel hasonlitjuk ossze, hogy csak akkor legyen true, ha az egesz sor tele van (amig nincs tele addig az elso sorban szokoz van, tehat nem egyezik meg, ha meg teljesen ures akkor meg mar ujra jo)
-                        ellenor=false;                          //helyes sorrend ellenorzese
+                    if(field[0][j]!=field[i][j]){             
+                        //megegyezik-e az 1. (0.) elemmel a tobbi az oszlopban, azert a legelsovel hasonlitjuk ossze, hogy csak akkor legyen true, ha az egesz sor tele van (amig nincs tele addig az elso sorban szokoz van, tehat nem egyezik meg, ha meg teljesen ures akkor meg mar ujra jo)
+                        ellenor=false;                          
+                        //helyes sorrend ellenorzese
                     }
                 
                 printf ("%c", field[i][j]);
@@ -59,6 +73,5 @@ int main(){
     }while(ellenor==false);
 
     printf("No konecne! trvalo to dlho ty tupak :)");
-    ball_sort_puzzle();
     return 0;
 }
