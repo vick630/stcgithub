@@ -125,18 +125,18 @@ void down_possible(const int rows, const int columns, char fidesz[rows][columns]
     printf ("%c\n", fidesz[3][5]);
 */
     if((fidesz[j][be]!=csre)&&(fidesz[j][be]!=' ')){        //ugyanazok a jelek vannak benne, mint amit bele akarok rakni? Ureset sem enged szimbolumosra
-        printf(" ty si kokot? co robis??????? tam su ine znaky \n");
+        printf(" ty si ? co robis??????? tam su ine znaky \n");
     }else 
         if(j==0){                                           //nincs sor tultoltes
-           printf(" ty si kokot?? co robis??????? kde to tam zmesti???? \n");
+           printf(" ty si ?? co robis??????? kde to tam zmesti???? \n");
         }else 
             if (bol==be)                                    //ne rakd ugyanabba, minek?!
             {
-                printf(" ty si kokot??? co robis??????? stlpy su tie iste!!! \n");
+                printf(" ty si ??? co robis??????? stlpy su tie iste!!! \n");
             }else
                 if ((bol>=columns)||(be>=columns))          //nem letezo oszlopokba ne rakjanak
                 {
-                    printf(" ty si kokot???? co robis??????? take stlpy neexistuju!!! \n");
+                    printf(" ty si ???? co robis??????? take stlpy neexistuju!!! \n");
                 }else 
                     if(fidesz[j][be]!=' '){                    //ha nem ures sorba raksz
                         fidesz[j-1][be]=fidesz[i][bol];
