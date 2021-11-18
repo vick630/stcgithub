@@ -59,5 +59,6 @@ int main(){
     }while(ellenor==false);
 
     printf("No konecne! trvalo to dlho ty tupak :)");
+    ball_sort_puzzle();
     return 0;
 }
