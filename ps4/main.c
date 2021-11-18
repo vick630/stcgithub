@@ -11,10 +11,10 @@ int main(){
     int columns=6;
     char fidesz[rows][columns];
     bool ellenor;
-    generator(rows,columns,fidesz);
+    generator(rows,columns,field);
 
     do{
-        down_possible(rows,columns,fidesz);
+        down_possible(rows,columns,field);
   
         ellenor=true;
                         //innentol csak kiiratas a while vegeig
