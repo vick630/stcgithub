@@ -23,8 +23,6 @@ int a, b;
     do{
         b=rand() % columns;
         }while(a==b);
-    printf ("%i\n", a);
-    printf ("%i\n", b);
 
     char lol=' ';   
     //lol
