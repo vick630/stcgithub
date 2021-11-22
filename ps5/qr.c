@@ -114,12 +114,11 @@ void bytes_to_blocks(const int cols, const int offset, bool blocks[offset*8][col
 
 void blocks_to_bytes(const int cols, const int offset, bool blocks[offset*8][cols], const int rows, bool bytes[rows][8])
 {
-    int i,j,a=0;
-    for(i;i<offset;i++)
+    for(int i=0;i<offset;i++)
     {
-        for(j=0;j<cols;j++)
+        for(int j=0;j<cols;j++)
         {
-            for(a=0;a<8;a++)
+            for(int a=0;a<8;a++)
             {
              blocks[j+i*cols][a]=blocks[a+i*8][j];
 
