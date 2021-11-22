@@ -115,15 +115,16 @@ void bytes_to_blocks(const int cols, const int offset, bool blocks[offset*8][col
 void blocks_to_bytes(const int cols, const int offset, bool blocks[offset*8][cols], const int rows, bool bytes[rows][8])
 {
     int i,j,a=0;
-    for(i=a;i<8+a;i++)
+    for(i;i<offset;i++)
     {
-        for(j=0;j<rows;j++)
+        for(j=0;j<cols;j++)
         {
-            if(j%3 && i<0)
+            for(a=0;a<8;a++)
             {
-                a+=8;
+             blocks[j+i*cols][a]=blocks[a+i*8][j];
+
             }
-            bytes[j][i%8]= blocks[i][j%3];
+            
         }
     }
 }
