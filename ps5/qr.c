@@ -40,7 +40,6 @@ void encode_char(const char character, bool bits[8])
         bits[p-1]= 0;
         p--;
     }
-    printf()
 }
 
 
