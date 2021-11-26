@@ -93,10 +93,10 @@ void bytes_to_blocks(const int cols, const int offset, bool blocks[offset*8][col
         for(int j = 0; j < 8; j++) {
             for (int k = 0; k < cols; k++)
             {
-                if (( 8 * i + k < rows ) && ( j < cols )){
-                     blocks[8 * i +j][k] = bytes[cols * i +k][j];
+                if(cols * i + k < rows){
+                    blocks[8 * i +j][k] = bytes[cols * i +k][j];
                 }else{
-                        blocks[8 * i +j][k]=0;
+                     blocks[8 * i +j][k] = 0;
                 }
             }
         }
