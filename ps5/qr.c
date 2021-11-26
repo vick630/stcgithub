@@ -89,15 +89,20 @@ void decode_bytes(const int rows, bool bytes[rows][8], char string[rows])
 
 void bytes_to_blocks(const int cols, const int offset, bool blocks[offset*8][cols], const int rows, bool bytes[rows][8])
 {
-	for(int i = 0; i < offset; i++) {
+	 for(int i = 0; i < offset; i++) {
         for(int j = 0; j < 8; j++) {
             for (int k = 0; k < cols; k++)
             {
-                blocks[8 * i +j][k] = bytes[cols * i +k][j];
-                
+                if (( 8 * i + k < rows ) && ( j < cols )){
+                     blocks[8 * i +j][k] = bytes[cols * i +k][j];
+                }else{
+                        blocks[8 * i +j][k]=0;
+                }
             }
         }
     }
+    
+    
 }
 
 void blocks_to_bytes(const int cols, const int offset, bool blocks[offset*8][cols], const int rows, bool bytes[rows][8])
