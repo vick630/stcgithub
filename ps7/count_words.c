@@ -2,8 +2,7 @@
 
 int main(int argc, char* argv[]){
 if(argc!=2)
-{
-    printf("nope");
+{printf("nope");
     return 0;
 }
 FILE *suboor = fopen (argv[1],"r+");
