@@ -1,8 +1,7 @@
 #include <stdio.h>
 
     int main(int argc, char* argv[])
-    {
-        FILE *subor=fopen (argv[1],"r+");
+    {FILE *subor=fopen (argv[1],"r+");
         FILE *suboor=fopen (argv[2],"w");
         int pit=0,a=0;
         char ch=fgetc(subor);
