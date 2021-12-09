@@ -1,51 +1,46 @@
 #include <stdio.h>
 
     int main(int argc, char* argv[])
-    {FILE *subor=fopen (argv[1],"r+");
+    {
+        FILE *subor=fopen (argv[1],"r+");
         FILE *suboor=fopen (argv[2],"w");
-        int pit=0,a=0;
-        char ch=fgetc(subor);
-        while (ch != EOF )
-        {
-                if(ch==83)
-                {
-
-                    ch=fgetc(subor);
-                    if(ch==84)
-                    {
-
-                        ch=fgetc(subor);
-                        if(ch==65)
+        int p=0;
+        int a=0;
+        char ok=fgetc(subor);
+        while (ok != EOF )
+        {  if(ok==83)
+                { ok=fgetc(subor);
+                    if(ok==84)
+                    { ok=fgetc(subor);
+                        if(ok==65)
                         {
 
-                            ch=fgetc(subor);
-                            if(ch==82)
+                            ok=fgetc(subor);
+                            if(ok==82)
                             {
 
-                                ch=fgetc(subor);
-                                if(ch==84)
+                                ok=fgetc(subor);
+                                if(ok==84)
                                 {
-
-                                    ch=fgetc(subor);
-                                    while ( ch != EOF )
+                                    ok=fgetc(subor);
+                                    while ( ok != EOF )
                                     {
 
-                                        if (ch==83)
+                                        if (ok==83)
                                         {
 
-                                            a++;
-                                            ch=fgetc(subor);
-                                            if (ch==84)
+                                            a=a+1;
+                                            ok=fgetc(subor);
+                                            if (ok==84)
                                             {
-
-                                                a++;
-                                                ch=fgetc(subor);
-                                                if (ch==79)
+                                                a=a+1;
+                                                ok=fgetc(subor);
+                                                if (ok==79)
                                                 {
 
                                                     a++;
-                                                    ch=fgetc(subor);
-                                                    if (ch==80)
+                                                    ok=fgetc(subor);
+                                                    if (ok==80)
                                                     {
 
                                                         break;
@@ -59,7 +54,7 @@
                                         }
 
 
-                                        if (pit%2 ==0 && pit>3)
+                                        if (p%2 ==0 && p>3)
                                         {
 
                                             fputc(32, suboor);
@@ -67,14 +62,14 @@
                                         }
 
 
-                                        if (a==1 && pit%2==0)
+                                        if (a==1 && p%2==0)
                                         {
 
                                             fputc(83, suboor);
 
                                         }
 
-                                        if (a==2 && pit%2==0)
+                                        if (a==2 && p%2==0)
                                         {
 
                                             fputc(83, suboor);
@@ -82,7 +77,7 @@
 
                                         }
 
-                                        if (a==3 && pit%2==0)
+                                        if (a==3 && p%2==0)
                                         {
 
                                             fputc(83, suboor);
@@ -90,37 +85,21 @@
                                             fputc(79, suboor);
 
                                         }
-
                                         a=0;
-
-                                        while (ch !=32)
+                                        while (ok !=32)
                                         {
-
-                                            if (pit%2 == 0)
+                                            if (p%2 == 0)
                                             {
-
-                                                fputc(ch, suboor);
-
+                                                fputc(ok, suboor);
                                             }
-
-                                            ch=fgetc(subor);
+                                            ok=fgetc(subor);
                                         }
+                                        p=p+1;
+                                        ok=fgetc(subor);
+                                    }}}}}}
 
-                                        pit++;
-                                        ch=fgetc(subor);
-                                    }
-
-                                }
-
-                            }
-
-                        }
-
-                    }
-
-                }
-
-    ch=fgetc(subor);}
+    ok=fgetc(subor);}
+    fclose(suboor);
     fclose(subor);
-    fclose(suboor);	
+    	
     }
