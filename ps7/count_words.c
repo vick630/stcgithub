@@ -1,13 +1,16 @@
 #include <stdio.h>
 
 int main(int argc, char* argv[]){
+char ok[]={'a','n','a','n','a','s'};
+FILE *suboor = fopen (argv[1],"r+");
 if(argc!=2)
-{printf("nope");
+{
     return 0;
 }
-FILE *suboor = fopen (argv[1],"r+");
-int p=0,o=0;
-char ok[]={'a','n','a','n','a','s'};
+
+int p=0;
+int o=0;
+
 char ch = fgetc(suboor);
 while(ch != EOF)
 {
@@ -32,15 +35,17 @@ while(ch != EOF)
 }
 printf("%i\n",p);
 fclose(suboor);
+
 FILE *subor = fopen (argv[1],"w");
 int b=(p-(p%10))/10;
 if(p<10)
 {
     fputc( (p)+48 , subor );
 }
-if(p>9 && p<100){
-    fputc( (p%10)+48 , subor ); 
+if(p<100 && p>9 ){
     fputc( (b)+48 , subor );
+    fputc( (p%10)+48 , subor ); 
     }
+
 fclose(subor);
 }
