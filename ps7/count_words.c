@@ -4,8 +4,7 @@ int main(int argc, char* argv[]){
 char ok[]={'a','n','a','n','a','s'};
 FILE *suboor = fopen (argv[1],"r+");
 if(argc!=2)
-{
-    return 0;
+{    return 0;
 }
 
 int p=0;
