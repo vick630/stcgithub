@@ -5,24 +5,24 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [  node-project ]
   pull_request:
-    branches: [ main ]
+    branches: [  node-project ]
 
 jobs:
-  build:
-
+  deploy:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [12.x, 14.x, 16.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+      - uses: actions/checkout@master
+
+      - name: Set up Node.js version
+        uses: actions/setup-node@v3
+        with:
+            node-version: '12.x'
+
+      - name: Perform install, build and start commands
+        run: |
+            npm install
+            tsc
+            npm run start --if-present
